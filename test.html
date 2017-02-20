@@ -1,1 +1,21 @@
-<h1>hello</h1>
+<html>
+<head>
+
+<script>
+window.onload = function() {
+  var startPos;
+  var geoSuccess = function(position) {
+    startPos = position;
+    document.getElementById('startLat').innerHTML = startPos.coords.latitude;
+    document.getElementById('startLon').innerHTML = startPos.coords.longitude;
+  };
+  navigator.geolocation.getCurrentPosition(geoSuccess);
+};
+</script>
+</head>
+<body>
+
+<h1 id="startLat">LAT</h1>
+<h1 id="startLon">LON</h1>
+</body>
+</html>
